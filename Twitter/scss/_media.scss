@@ -36,3 +36,8 @@
     display: none;
   }
 }
+@media(max-width:499px) {
+  .div-left_section {
+    display: none !important;
+  }
+}

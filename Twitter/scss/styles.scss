@@ -1,0 +1,20 @@
+@use "resets.scss";
+@use "variables.scss";
+@use "general.scss";
+@use "media.scss";
+@use "left.scss";
+@use "middle.scss";
+@use "right.scss";
+
+%flex {
+  display: flex;
+}
+
+main {
+  @extend %flex;
+  width: variables.$main-width;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+

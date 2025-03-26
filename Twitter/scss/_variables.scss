@@ -1,0 +1,130 @@
+$primary_color: black;
+$secondary_color: rgb(29, 155, 240);
+$text_color: white;
+$text_color2: rgb(126, 126, 126);
+$hover: rgb(41, 41, 41);
+$hover2: rgb(112, 112, 112);
+$hover3: rgb(0, 196, 0);
+$hover4: rgb(253, 45, 73);
+$hover5: rgb(96, 0, 250);
+$border: rgb(73, 73, 73);
+$scroll: gray;
+$scroll2: rgb(56, 56, 56);
+$scroll3: rgb(216, 216, 216);
+
+$main-width: 1250px;
+
+@mixin theme($light_theme: true) {
+  @if ($light_theme) {
+    background: lighten($primary_color, 100%);
+    color: darken($text_color, 100%);
+    .div-middle_section_top_panel_text1,
+    .div-middle_section_top_panel_text2 {
+      background: lighten($primary_color, 95%);
+      &:hover {
+        background-color: lighten($hover, 55%);
+      }
+    }
+    .div-right_section_worth_following_part,
+    .div-right_section_worth_following_see_more {
+      &:hover {
+        background-color: lighten($hover, 75%);
+      }
+    }
+    .div-left_section .div-left_section_profile {
+      color: darken($text_color2, 100%);
+      &:hover {
+        background-color: lighten($hover, 40%);
+        background-color: lighten($hover2, 40%);
+      }
+
+      .div-left_section_profile_popup {
+        background-color: gray;
+        color: $text_color;
+      }
+    }
+    .div-left_section_tile .div-left_section_tile_wrap {
+      &:hover {
+        background-color: lighten($hover, 50%);
+      }
+    }
+    .div-left_section .div-left_section_btn_container {
+      button {
+        background-color: $secondary_color;
+        color: $text_color;
+        &:active {
+          opacity: 0.8;
+        }
+      }
+    }
+    .div-left_section {
+      &_logo_container {
+        &:hover {
+          background-color: lighten($hover, 60%);
+        }
+      }
+    }
+    .div-middle_section {
+      &::-webkit-scrollbar {
+        width: 2px;
+        height: 0.75rem;
+      }
+      &::-webkit-scrollbar-track {
+        background: $scroll3;
+        border-radius: 1px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $scroll;
+        border-radius: 6px;
+        border: 0.1px solid $text_color;
+      }
+    }
+    .div-middle_section_publication {
+      &:hover {
+        box-shadow: inset 0 10px 100px rgb(218, 218, 218);
+      }
+      &:active video,
+      &:active .img-publication {
+        box-shadow: 0px 0px 20px rgb(110, 110, 110);
+      }
+      .div-middle_section_publication_right_stats_part,
+      .div-middle_section_publication_right_stats_rest {
+        background-color: rgb(207, 207, 207);
+        padding: 2px 7px 2px 5px;
+        border-radius: 1rem;
+      }
+    }
+    .div-middle_section_post
+      .div-middle_section_post_right
+      .div-middle_section_post_right_top {
+      #input-post_search {
+        background-color: lighten($primary_color, 90%);
+        color: $primary_color;
+      }
+    }
+    .div-middle_section_post {
+      &_right {
+        &_bottom {
+          &_left {
+            &_img_cont {
+              &:hover {
+                background-color: lighten($hover, 70%);
+              }
+            }
+          }
+        }
+      }
+    }
+    .div-right_section {
+      &_input_container {
+        #input-right_search {
+          background-color: lighten($border, 50%);
+          color: $text_color2;
+        }
+      }
+    }
+  } @else {
+    background: darken($primary_color, 100%);
+    color: lighten($text_color, 100%);
+  }
+}

@@ -1,0 +1,283 @@
+@use "variables.scss";
+@use "general.scss";
+@use "resets.scss";
+@use "media.scss";
+
+.div-middle_section {
+  flex: 1 1 70%;
+  position: relative;
+  border-bottom: 0.01px solid variables.$border;
+  border-left: 0.01px solid variables.$border;
+  border-right: 0.01px solid variables.$border;
+  overflow-y: auto;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 0.75rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: variables.$scroll2;
+    border-radius: 1px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #202020;
+    border-radius: 6px;
+    border: 0.1px solid #1d1d1d;
+  }
+
+  &_top_panel {
+    display: flex;
+    position: sticky;
+    left: 0;
+    top: 0;
+    right: 0;
+    border-bottom: 0.01px solid variables.$border;
+
+    &_text1,
+    &_text2 {
+      flex: 1;
+      background-color: variables.$primary_color;
+      opacity: 0.8;
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.4s, opacity 0.2s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: variables.$secondary_color;
+        height: 3px;
+        width: 30%;
+        transition: ease-in-out 0.2s;
+      }
+      &:hover::after {
+        width: 40%;
+      }
+
+      &:active::after {
+        width: 100%;
+      }
+
+      &:active {
+        opacity: 0.95;
+      }
+
+      &:hover {
+        background-color: rgb(49, 49, 49);
+      }
+    }
+  }
+
+  &_post {
+    display: flex;
+    column-gap: 0.5rem;
+    padding: 1.25rem 1.25rem 0.25rem 1.25rem;
+    border-bottom: 0.01px solid variables.$border;
+
+    &_left {
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      img {
+        display: flex;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.95;
+        }
+      }
+    }
+    &_right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      &_top {
+        #input-post_search {
+          border: none;
+          color: white;
+          background-color: variables.$primary_color;
+          font-size: 1rem;
+          font-weight: 400;
+          padding: 0.6rem;
+          &:active,
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      &_bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 0.01px solid variables.$border;
+        padding: 10px;
+        column-gap: 10px;
+        &_left {
+          display: flex;
+          column-gap: 10px;
+          &_img_cont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            transition: background-color 0.25s;
+            img {
+              display: flex;
+              height: 15px;
+              width: 15px;
+            }
+            &:hover {
+              background-color: variables.$hover;
+            }
+          }
+        }
+        &_right {
+          display: flex;
+          flex: 1 0 auto;
+          justify-content: flex-end;
+          button {
+            padding: 10px 15px 10px 15px;
+            border-radius: 2rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.5s, background-color 0.5s,
+              border 0.5s;
+            &:active {
+              transform: scale(0.95);
+              background-color: variables.$secondary_color;
+              color: variables.$text_color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_publication {
+    display: flex;
+    padding: 15px;
+    column-gap: 10px;
+    border-bottom: 0.1px solid variables.$border;
+    transition: box-shadow 0.2s;
+    cursor: pointer;
+    &:hover {
+      box-shadow: inset 0 10px 100px rgb(36, 36, 36);
+    }
+    &:active video,
+    &:active .img-publication {
+      box-shadow: 0px 0px 20px rgb(61, 61, 61);
+    }
+    &_left {
+      &_avatar {
+        img {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+    &_right {
+      &_account_info {
+        margin-bottom: 5px;
+      }
+      video,
+      .img-publication {
+        border-radius: 1rem;
+        border: 0.1px solid variables.$border;
+        transition: box-shadow 0.2s;
+        transition-duration: 0.5s;
+        width: 100%;
+      }
+
+      &_stats {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        column-gap: 5px;
+        &_part {
+          display: flex;
+          align-items: center;
+          column-gap: 1px;
+          &:hover &_left_image_cont1 {
+            background-color: variables.$secondary_color;
+          }
+          &:hover &_left_image_cont2 {
+            background-color: variables.$hover3;
+          }
+          &:hover &_left_image_cont3 {
+            background-color: variables.$hover4;
+          }
+          &:hover &_left_image_cont4 {
+            background-color: variables.$hover5;
+          }
+          &:hover &_right .small-1 {
+            color: variables.$secondary_color;
+          }
+          &:hover &_right .small-2 {
+            color: variables.$hover3;
+          }
+          &:hover &_right .small-3 {
+            color: variables.$hover4;
+          }
+          &:hover &_right .small-4 {
+            color: variables.$hover5;
+          }
+          &_left {
+            display: flex;
+            transition: background-color 0.2s;
+            &_image_cont1,
+            &_image_cont2,
+            &_image_cont3,
+            &_image_cont4 {
+              border-radius: 50%;
+              transition: background-color 0.2s;
+            }
+            img {
+              display: flex;
+              height: 1.5rem;
+              width: 1.5rem;
+              padding: 5px;
+            }
+          }
+          &_right {
+            display: flex;
+            small {
+              color: variables.$text_color2;
+              font-family: Roboto, Arial;
+              transition: color 0.2s;
+            }
+          }
+        }
+        &_rest {
+          display: flex;
+          column-gap: 2px;
+
+          &_image_cont {
+            border-radius: 50%;
+            transition: background-color 0.2s;
+            &:hover {
+              background-color: variables.$secondary_color;
+            }
+            img {
+              display: flex;
+              height: 1.5rem;
+              width: 1.5rem;
+              padding: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

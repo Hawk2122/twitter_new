@@ -1,0 +1,42 @@
+//LEFT SECTION STYLES
+@use 'variables.scss';
+.p-tile_text{
+  font-weight: 400;
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+.p-name{
+  font-weight: 700;
+}
+.p-tag{
+  color: variables.$text-color2;
+}
+
+//MIDLE SECTION STYLES
+
+.p-text1{
+  padding: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+}
+.btn-middle_post{
+  font-family: Roboto,Arial;
+  font-weight: 700;
+}
+  //publication
+  .p-middle_pub_text{
+  font-size: 0.97rem;
+  margin-bottom: 10px;
+  }
+  .small-account{
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .small-account_tag{
+    color: variables.$text_color2;
+    text-transform: lowercase;
+  }
+  .small-account_stats{
+    color: variables.$text_color2;
+    text-transform: lowercase;
+  }

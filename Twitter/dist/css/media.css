@@ -1,0 +1,19 @@
+@media (max-width: 1000px) {
+  .div-left_section_tile {
+    justify-content: center;
+  }
+  .div-left_section_tile_wrap {
+    padding: 15px 30px;
+  }
+  .div-left_section_tile_wrap_text {
+    display: none;
+  }
+  .div-left_section_btn_container {
+    display: none;
+  }
+}
+@media (max-width: 1050px) {
+  .div-right_section_input_container, .div-right_section_premium, .div-right_section_worth_following {
+    display: none;
+  }
+}/*# sourceMappingURL=media.css.map */
